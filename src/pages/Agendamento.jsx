@@ -29,7 +29,7 @@ function Agendamento() {
               type="number"
               value={nome}
               onChange={(e) => setNome(e.target.value)}
-              placeholder="Digite seu Telefone..."
+              placeholder="Digite seu Nome..."
               required
               className="w-full px-4 py-2 rounded bg-gray-200 focus:outline-none"
             />
@@ -40,7 +40,7 @@ function Agendamento() {
               type="text"
               value={nome}
               onChange={(e) => telefoneNome(e.target.value)}
-              placeholder="Digite seu nome..."
+              placeholder="Digite seu Telefone..."
               required
               className="w-full px-4 py-2 rounded bg-gray-200 focus:outline-none"
             />
