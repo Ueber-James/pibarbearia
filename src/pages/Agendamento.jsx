@@ -26,7 +26,7 @@ function Agendamento() {
           <div className="mb-4">
             <label className="block text-white mb-2">Nome</label>
             <input
-              type="number"
+              type="text"
               value={nome}
               onChange={(e) => setNome(e.target.value)}
               placeholder="Digite seu Nome..."
