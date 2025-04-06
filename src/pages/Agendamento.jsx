@@ -5,14 +5,14 @@ function Agendamento() {
   const navigate = useNavigate();
 
   const [nome, setNome] = useState('');
-  const [telefone, telefoneNome] = useState('');
+  const [telefone, setTelefone] = useState('');
   const [servico, setServico] = useState('');
   const [data, setData] = useState('');
   const [horario, setHorario] = useState('');
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log({ nome, servico, data, horario });
+    console.log({ nome, servico, data, horario, telefone });
     alert('Agendamento realizado com sucesso!');
   };
 
@@ -38,8 +38,8 @@ function Agendamento() {
             <label className="block text-white mb-2">Telefone</label>
             <input
               type="text"
-              value={nome}
-              onChange={(e) => telefoneNome(e.target.value)}
+              value={telefone}
+              onChange={(e) => setTelefone(e.target.value)}
               placeholder="Digite seu Telefone..."
               required
               className="w-full px-4 py-2 rounded bg-gray-200 focus:outline-none"
