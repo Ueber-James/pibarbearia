@@ -16,7 +16,7 @@ export default function Agendamento() {
     try {
       const appt = await createAgendamento(form);
       alert(`Agendamento  realizado com sucesso!`);
-      
+      window.location.reload(); 
     } catch (err) {
       console.error(err);
       alert(`Erro ao agendar: ${err.message}`);
