@@ -4,6 +4,8 @@ import Layout from './components/Layout';
 import Home from './pages/Home';
  import Login from './pages/Login';
  import Agendamento from './pages/Agendamento';
+ import ListaAgendamentos from './pages/ListaAgendamentos';
+import PrivateRoute from './components/PrivateRoute';
 
 
 
@@ -16,6 +18,16 @@ function App() {
           <Route path="login" element={<Login />} />
           <Route path="agendamento" element={<Agendamento />} />
         </Route>
+
+        {/* Rota protegida */}
+        <Route
+          path="/lista-agendamentos"
+          element={
+            <PrivateRoute>
+              <ListaAgendamentos />
+            </PrivateRoute>
+          }
+        />
       </Routes>
     </BrowserRouter>
   );

@@ -1,7 +1,10 @@
+import React from 'react';
 import Logo from '../assets/Logo.svg';
 import { HashLink } from 'react-router-hash-link';
+import LogoutButton from '../components/LogoutButton';
 
 function Menu() {
+  const token = localStorage.getItem('token');
   return (
     <nav className="sticky top-0 z-50 bg-[#070A14] shadow w-full">
       <div className="flex items-center justify-between py-4 px-4">
@@ -30,19 +33,26 @@ function Menu() {
                 Equipe
               </HashLink>
             </li>
-           
             <li>
               <HashLink smooth to="https://wa.me/XXXXXXXXXXX" className="text-white px-4 py-2 rounded hover:bg-green-600">
-             
-              Fale conosco via WhatsApp
-                
+                Fale conosco via WhatsApp
               </HashLink>
             </li>
+            {token && (
+              <li>
+                <HashLink smooth to="/lista-agendamentos" className="text-white px-4 py-2 rounded hover:text-gray-400">
+                  Agendamentos
+                </HashLink>
+              </li>
+            )}
           </ul>
         </div>
-        <HashLink smooth to="/agendamento" className="bg-[#f0b35b] text-black px-4 py-2 rounded hover:bg-blue-600">
-          Agendar horário
-        </HashLink>
+        <div className="flex items-center space-x-4">
+          <HashLink smooth to="/agendamento" className="bg-[#f0b35b] text-black px-4 py-2 rounded hover:bg-blue-600">
+            Agendar horário
+          </HashLink>
+          {token && <LogoutButton />}
+        </div>
       </div>
     </nav>
   );
