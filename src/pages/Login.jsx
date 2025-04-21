@@ -15,7 +15,7 @@ export default function Login() {
       const { token } = await login(email, password);
       localStorage.setItem('token', token);
        // ou "/" se preferir
-      navigate('/lista-agendamentos');
+      navigate('/');
    window.location.reload();      // ← força atualizar toda a página
     } catch (err) {
       console.error(err);
